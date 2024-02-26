@@ -1,0 +1,84 @@
+Accounts
+
+name: Admin Account
+email: admin@mail.com
+password: adminadmin
+
+name: User Account
+email: user@mail.com
+password: useruser
+
+name: Asus Official Store
+email: asus@mail.com
+password: asusasus
+
+name: Acer Official Store
+email: acer@mail.com
+password: aceracerstore
+
+name: Lenovo Official Store
+email: lenovo@mail.com
+password: lenovolenovo
+
+name: Gigabyte Official Store
+email: gigabyte@mail.com
+password: gigabytegigabyte
+
+
+
+
+@extends('layouts.app')
+
+@section('content')
+    <div class="addProduct container">
+        <div class="row justify-content-center align-items-center" style="height: 75vh;">
+            <div class="col-8 offset-2">
+                <form method="POST" action="/addProfile/{{ Auth::user()->id }}/update" enctype="multipart/form-data">
+                    @csrf
+                    @method("PUT")
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                @if(Auth::user()->profile == null)
+                                    <label for='profile'><img src="https://static.thenounproject.com/png/629576-200.png" class="shadow" style="width: 15rem; cursor: pointer;" /></label>
+                                @else
+                                    <label for='profile'><img src="{{ Auth::user()->profile }}" style="width: 15rem; cursor: pointer;" /></label>
+                                @endif
+                                
+
+
+                                <input type="file" name="profile" id="profile" id='profile' accept='.jpeg, .png, .jpg' style="display: none; visibility: none;" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Name:</label>
+                                <input type="text" name="name"  id="name" value="{{ Auth::user()->name }}" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Email:</label>
+                                <input type="email" name="price" id="price" value="{{ Auth::user()->email }}" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    
+            
+                    <div class="mt-2">
+                        <button type="submit" class="btn btn-primary">Update Profile</button>
+                    </div>
+            
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+
+    </script>
+	
+
+@endsection
+

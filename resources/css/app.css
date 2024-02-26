@@ -1,0 +1,30 @@
+/*CSS Reset*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+.allProducts {
+  padding-top: 50rem;
+}
+
+.login {
+  padding-top: 5rem;
+}
+
+.home {
+  /* padding-top: 5rem; */
+}
+
+.addProduct {
+  padding-top: 5rem;
+}
+
+/* ----------------------------- */
